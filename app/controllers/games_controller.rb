@@ -2,9 +2,7 @@
 
 class GamesController < ApplicationController
   def show
-    if player
-      'TODO'
-    else
+    unless player
       flash[:alert] = 'You first need to sign up as a player for this game'
       redirect_to new_game_player_path(game)
     end
