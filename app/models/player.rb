@@ -7,6 +7,8 @@ class Player < ApplicationRecord
 
   before_create :assign_character
 
+  validates :name, presence: true
+
   private
 
   def assign_character

@@ -1,0 +1,4 @@
+<%= form_with model: player, url: game_players_path(player.game) do |f| %>
+  <%= f.text_field :name %>
+  <%= f.submit 'Continue' %>
+<% end %>
