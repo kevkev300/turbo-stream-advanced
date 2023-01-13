@@ -5,7 +5,11 @@
 </div>
 
 <div>
-  To play, another player needs to sign in. You can simply send them this link:
-  <br>
-  <%= link_to game_url(@game), game_url(@game), target: '_blank' %>
+  <% if @game.all_players_present? %>
+    <%= render 'board', game: @game %>
+  <% else %>
+    To play, another player needs to sign in. You can simply send them this link:
+    <br>
+    <%= link_to game_url(@game), game_url(@game), target: '_blank' %>
+  <% end %>
 </div>
