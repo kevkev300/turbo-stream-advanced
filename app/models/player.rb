@@ -12,6 +12,6 @@ class Player < ApplicationRecord
   private
 
   def assign_character
-    (Player::CHARACTERS - game.players.pluck(:character)).sample
+    self.character = (Player::CHARACTERS - game.players.pluck(:character)).sample
   end
 end

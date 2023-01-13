@@ -1,0 +1,11 @@
+<div>
+  <h2>Player: <%= @player.name %></h2>
+  <h2>Game ID: <%= @game.id %></h2>
+  <%= link_to 'Leave game >>>', root_path %>
+</div>
+
+<div>
+  To play, another player needs to sign in. You can simply send them this link:
+  <br>
+  <%= link_to game_url(@game), game_url(@game), target: '_blank' %>
+</div>

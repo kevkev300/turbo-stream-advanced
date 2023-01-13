@@ -9,7 +9,7 @@ class PlayersController < ApplicationController
     @player = game.players.new(player_params)
 
     if @player.save
-      redirect_to root_path
+      redirect_to game_path(@player.game, player_id: @player.id)
     else
       render :new, status: :unprocessable_entity
     end
