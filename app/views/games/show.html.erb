@@ -1,15 +1,21 @@
 <div>
-  <h2>Player: <%= @player.name %></h2>
-  <h2>Game ID: <%= @game.id %></h2>
-  <%= link_to 'Leave game >>>', root_path %>
+  <h2><text class="text-orange-400">Player: </text><%= @player.name %></h2>
+  <h2><text class="text-orange-400">Game ID: </text><%= @game.id %></h2>
+  <div class="my-5">
+    <%= link_to 'Leave game >>>', root_path, class: "border-2 border-solid py-1 px-3 border-orange-400 rounded-lg text-orange-400" %>
+  </div>
 </div>
 
-<div>
-  <% if @game.all_players_present? %>
-    <%= render 'board', game: @game %>
-  <% else %>
-    To play, another player needs to sign in. You can simply send them this link:
-    <br>
-    <%= link_to game_url(@game), game_url(@game), target: '_blank' %>
-  <% end %>
+<div class="flex justify-center mt-10">
+  <div class="max-w-md rounded overflow-hidden shadow-lg p-5">
+    <% if @game.all_players_present? %>
+      <%= render 'board', game: @game %>
+    <% else %>
+      To play, another player needs to sign in. You can simply send them this link:
+      <br>
+      <div class="mt-5">
+        <%= link_to game_url(@game), game_url(@game), target: '_blank', class: 'text-blue-700 underline underline-offset-2' %>
+      </div>
+    <% end %>
+  </div>
 </div>
