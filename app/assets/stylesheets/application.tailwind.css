@@ -28,6 +28,34 @@
   }
 
   .errors {
-    @apply text-red-500
+    @apply text-red-500;
+  }
+
+  table {
+    @apply border-collapse;
+  }
+
+  td {
+    @apply border-4 border-solid;
+  }
+
+  tr:first-child td {
+    @apply border-t-0;
+  }
+
+  tr td:first-child {
+    @apply border-l-0;
+  }
+
+  tr:last-child td {
+    @apply border-b-0;
+  }
+
+  tr td:last-child {
+    @apply border-r-0;
+  }
+
+  td > button {
+    @apply p-5
   }
 }
