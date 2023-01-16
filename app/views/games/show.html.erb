@@ -1,6 +1,7 @@
 <div>
   <h2><text class="text-orange-400">Player: </text><%= @player.name %></h2>
   <h2><text class="text-orange-400">Game ID: </text><%= @game.id %></h2>
+  <h2><text class="text-orange-400">You are: </text><text class="border-2 border-orange-400 rounded-lg px-1"><%= @player.character %></text></h2>
   <div class="my-5">
     <%= link_to 'Leave game >>>', root_path, class: "border-2 border-solid py-1 px-3 border-orange-400 rounded-lg text-orange-400" %>
   </div>
