@@ -1,21 +1,19 @@
-<%# TODO %>
-
 <div id="board">
   <table class="table-fixed text-2xl">
     <tr>
-      <td><button id="field_0">0</button></td>
-      <td><button id="field_1">1</button></td>
-      <td><button id="field_2">2</button></td>
+      <td><%= render 'field', game: game, player: player, field_nr: 1 %></td>
+      <td><%= render 'field', game: game, player: player, field_nr: 2 %></td>
+      <td><%= render 'field', game: game, player: player, field_nr: 3 %></td>
     </tr>
     <tr>
-      <td><button id="field_3">3</button></td>
-      <td><button id="field_4">4</button></td>
-      <td><button id="field_5">5</button></td>
+      <td><%= render 'field', game: game, player: player, field_nr: 4 %></td>
+      <td><%= render 'field', game: game, player: player, field_nr: 5 %></td>
+      <td><%= render 'field', game: game, player: player, field_nr: 6 %></td>
     </tr>
     <tr>
-      <td><button id="field_6">6</button></td>
-      <td><button id="field_7">7</button></td>
-      <td><button id="field_8">8</button></td>
+      <td><%= render 'field', game: game, player: player, field_nr: 7 %></td>
+      <td><%= render 'field', game: game, player: player, field_nr: 8 %></td>
+      <td><%= render 'field', game: game, player: player, field_nr: 9 %></td>
     </tr>
   </table>
 </div>

@@ -36,7 +36,7 @@
   }
 
   td {
-    @apply border-4 border-solid;
+    @apply border-4 border-solid w-20 h-20 text-center p-0;
   }
 
   tr:first-child td {
@@ -53,9 +53,5 @@
 
   tr td:last-child {
     @apply border-r-0;
-  }
-
-  td > button {
-    @apply p-5
   }
 }

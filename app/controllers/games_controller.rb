@@ -22,6 +22,17 @@ class GamesController < ApplicationController
     end
   end
 
+  def update
+    @player = game.players.find(games_params[:player_id])
+    game.update("field#{games_params[:field_nr]}": @player.character)
+
+    render partial: 'field', locals: {
+      game: game,
+      player: @player,
+      field_nr: games_params[:field_nr]
+    }
+  end
+
   private
 
   def game
@@ -30,5 +41,13 @@ class GamesController < ApplicationController
 
   def player
     @player ||= game.players.find_by(id: params[:player_id])
+  end
+
+  def games_params
+    params.require(:game).permit(:field_nr, :player_id)
+  end
+
+  def field_value(player)
+    @player.character
   end
 end
