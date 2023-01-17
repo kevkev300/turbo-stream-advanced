@@ -9,9 +9,25 @@ class Player < ApplicationRecord
 
   validates :name, presence: true
 
+  after_create :notify_opponent
+
+  def opponent
+    opponent_character = (CHARACTERS - [character]).first
+    game.players.find_by(character: opponent_character)
+  end
+
   private
 
   def assign_character
     self.character = (Player::CHARACTERS - game.players.pluck(:character)).sample
+  end
+
+  def notify_opponent
+    return if opponent.nil?
+
+    broadcast_replace_to [opponent, 'board'],
+                         target: 'board',
+                         partial: 'games/board',
+                         locals: { game: game, player: opponent }
   end
 end

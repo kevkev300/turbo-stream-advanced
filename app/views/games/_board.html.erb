@@ -1,19 +1,17 @@
-<div id="board">
-  <table class="table-fixed text-2xl">
-    <tr>
-      <td><%= render 'field', game: game, player: player, field_nr: 1 %></td>
-      <td><%= render 'field', game: game, player: player, field_nr: 2 %></td>
-      <td><%= render 'field', game: game, player: player, field_nr: 3 %></td>
-    </tr>
-    <tr>
-      <td><%= render 'field', game: game, player: player, field_nr: 4 %></td>
-      <td><%= render 'field', game: game, player: player, field_nr: 5 %></td>
-      <td><%= render 'field', game: game, player: player, field_nr: 6 %></td>
-    </tr>
-    <tr>
-      <td><%= render 'field', game: game, player: player, field_nr: 7 %></td>
-      <td><%= render 'field', game: game, player: player, field_nr: 8 %></td>
-      <td><%= render 'field', game: game, player: player, field_nr: 9 %></td>
-    </tr>
-  </table>
-</div>
+<table class="table-fixed text-2xl">
+  <tr>
+    <td><%= render 'games/field', game: game, player: player, field_nr: 1 %></td>
+    <td><%= render 'games/field', game: game, player: player, field_nr: 2 %></td>
+    <td><%= render 'games/field', game: game, player: player, field_nr: 3 %></td>
+  </tr>
+  <tr>
+    <td><%= render 'games/field', game: game, player: player, field_nr: 4 %></td>
+    <td><%= render 'games/field', game: game, player: player, field_nr: 5 %></td>
+    <td><%= render 'games/field', game: game, player: player, field_nr: 6 %></td>
+  </tr>
+  <tr>
+    <td><%= render 'games/field', game: game, player: player, field_nr: 7 %></td>
+    <td><%= render 'games/field', game: game, player: player, field_nr: 8 %></td>
+    <td><%= render 'games/field', game: game, player: player, field_nr: 9 %></td>
+  </tr>
+</table>

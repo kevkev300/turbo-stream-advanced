@@ -1,3 +1,5 @@
+<%= turbo_stream_from @player, "board" %>
+
 <div>
   <h2><text class="text-orange-400">Player: </text><%= @player.name %></h2>
   <h2><text class="text-orange-400">Game ID: </text><%= @game.id %></h2>
@@ -8,7 +10,7 @@
 </div>
 
 <div class="flex justify-center mt-10">
-  <div class="max-w-md rounded overflow-hidden shadow-lg p-5">
+  <div id="board" class="max-w-md rounded overflow-hidden shadow-lg p-5">
     <% if @game.all_players_present? %>
       <%= render 'board', game: @game, player: @player %>
     <% else %>

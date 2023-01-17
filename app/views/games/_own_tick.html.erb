@@ -1,5 +1,5 @@
 <%= turbo_frame_tag "field#{field_nr}" do %>
-  <div class="animate-pulse" data-controller="remove-css-class" data-remove-css-class-target="element" data-remove-css-class-css-class-value="animate-pulse">
+  <div class="text-orange-400" data-controller="remove-css-class" data-remove-css-class-target="element" data-remove-css-class-css-class-value="text-orange-400">
     <%= game.public_send("field#{field_nr}") %>
   </div>
 <% end %>
