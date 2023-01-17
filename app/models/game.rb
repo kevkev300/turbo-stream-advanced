@@ -10,13 +10,16 @@ class Game < ApplicationRecord
   after_update :broadcast_tick_to_opponent
 
   def all_players_present?
-    players.count == 2
+    characters = players.pluck(:character)
+    Player::CHARACTERS.all? { |c| characters.include?(c) }
   end
 
   private
 
   def broadcast_tick_to_opponent
     change = previous_changes.select { |k, _v| k.include?('field') }
+    return if change.empty?
+
     field = change.keys.first
     player = players.find_by(character: change[change.keys.first].last)
 
