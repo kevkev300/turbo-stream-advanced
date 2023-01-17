@@ -16,6 +16,14 @@ class Player < ApplicationRecord
     game.players.find_by(character: opponent_character)
   end
 
+  def broadcast_unsubsciption
+    return if opponent.nil?
+
+    broadcast_update_to [opponent, 'board'],
+                        target: 'board',
+                        html: 'Your opponent left the game. Please start a new one.'
+  end
+
   private
 
   def assign_character
