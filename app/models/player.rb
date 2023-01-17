@@ -25,7 +25,7 @@ class Player < ApplicationRecord
   def notify_opponent
     return if opponent.nil?
 
-    broadcast_replace_to [opponent, 'board'],
+    broadcast_update_to [opponent, 'board'],
                          target: 'board',
                          partial: 'games/board',
                          locals: { game: game, player: opponent }
