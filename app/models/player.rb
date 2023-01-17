@@ -31,8 +31,8 @@ class Player < ApplicationRecord
                          locals: { game: game, player: opponent }
 
     broadcast_update_to [opponent, 'board'],
-                         target: 'opponent_name',
-                         partial: 'games/opponent_name',
-                         locals: { opponent: self }
+                        target: 'opponent_name',
+                        partial: 'games/opponent_name',
+                        locals: { opponent: self }
   end
 end
