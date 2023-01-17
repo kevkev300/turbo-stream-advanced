@@ -4,7 +4,7 @@ This is a little tik tak toe Ruby on Rails app to demonstrate some advanced hotw
 
 ## Use Case
 
-- Tik Tak Toe game
+- Tic Tac Toe game
 - 2 player involved
 - Can only play when both players are in the game simultaneously
 - Actions of one player effect the other player’s UI
@@ -15,7 +15,7 @@ To make it interesting and have some level up in complexity we have 3 constraint
 Player 1 needs to start the game and can only do so once Player 2 is present.
 
 - Level: basic turbo stream broadcasting usage
-- Branch: `master`
+- Branch: `main`
 
 ### Constraint 2
 Only 2 players are allowed to connect via the websocket in one game.
