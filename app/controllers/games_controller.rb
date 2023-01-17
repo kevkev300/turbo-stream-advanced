@@ -2,12 +2,12 @@
 
 class GamesController < ApplicationController
   def show
-    unless player
+    if player
+      cookies[:player_id] = player.id
+    else
       flash[:alert] = 'You first need to sign up as a player for this game'
       redirect_to new_game_player_path(game)
     end
-
-    cookies[:player_id] = player.id
   end
 
   def new
