@@ -14,15 +14,15 @@ ActiveRecord::Schema[7.0].define(version: 2023_01_16_165457) do
   create_table "games", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "field1"
-    t.string "field2"
-    t.string "field3"
-    t.string "field4"
-    t.string "field5"
-    t.string "field6"
-    t.string "field7"
-    t.string "field8"
-    t.string "field9"
+    t.integer "field1"
+    t.integer "field2"
+    t.integer "field3"
+    t.integer "field4"
+    t.integer "field5"
+    t.integer "field6"
+    t.integer "field7"
+    t.integer "field8"
+    t.integer "field9"
   end
 
   create_table "players", force: :cascade do |t|

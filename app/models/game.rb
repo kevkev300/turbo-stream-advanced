@@ -3,15 +3,21 @@
 class Game < ApplicationRecord
   has_many :players
 
-  validates :field1, :field2, :field3, :field4, :field5,
-            :field6, :field7, :field8, :field9,
-            inclusion: { in: (Player::CHARACTERS + [nil]) }
-
   after_update :broadcast_tick_to_opponent
 
   def all_players_present?
     characters = players.pluck(:character)
     Player::CHARACTERS.all? { |c| characters.include?(c) }
+  end
+
+  (1..9).each do |i|
+    define_method("field#{i}_player") do
+      players.find_by(id: send("field#{i}"))
+    end
+
+    define_method("field#{i}_character") do
+      send("field#{i}_player")&.character
+    end
   end
 
   private
@@ -21,7 +27,7 @@ class Game < ApplicationRecord
     return if change.empty?
 
     field = change.keys.first
-    player = players.find_by(character: change[change.keys.first].last)
+    player = players.find_by(id: change[change.keys.first].last)
 
     broadcast_replace_to [player.opponent, 'board'],
                         target: field,

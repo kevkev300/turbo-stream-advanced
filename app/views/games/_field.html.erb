@@ -1,6 +1,6 @@
 <%= turbo_frame_tag "field#{field_nr}" do %>
-  <% if game.public_send("field#{field_nr}") %>
-    <%= game.public_send("field#{field_nr}") %>
+  <% if game.public_send("field#{field_nr}_character") %>
+    <%= game.public_send("field#{field_nr}_character") %>
   <% else %>
     <%= form_with model: game do |f| %>
       <%= f.hidden_field :field_nr, value: field_nr %>
