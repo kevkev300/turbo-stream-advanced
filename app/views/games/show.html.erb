@@ -1,4 +1,4 @@
-<%= turbo_stream_from @player, "board" %>
+<%= turbo_stream_from @player, "board", channel: GameChannel %>
 
 <div>
   <h1 class="!text-3xl"><text class="text-orange-400">Player: </text><%= @player.character %> <%= @player.name %></h1>
