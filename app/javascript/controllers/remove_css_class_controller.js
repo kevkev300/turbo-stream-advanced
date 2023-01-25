@@ -11,6 +11,6 @@ export default class extends Controller {
 
     setInterval(() => {
       this.elementTarget.classList.remove(this.cssClassValue)
-    }, 5000);
+    }, 1000);
   }
 }
