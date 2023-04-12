@@ -5,7 +5,7 @@
     <%= form_with model: game do |f| %>
       <%= f.hidden_field :field_nr, value: field_nr %>
       <%= f.hidden_field :player_id, value: player.id %>
-      <%= f.submit '' %>
+      <%= f.submit 'X', class: '!text-orange-400' %>
     <% end %>
   <% end %>
 <% end %>
