@@ -1,13 +1,12 @@
 <%= turbo_stream_from @player, "board" %>
 
 <div>
-  <h1 class="!text-4xl"><text class="text-orange-400">Player: </text><%= @player.name %></h1>
+  <h1 class="!text-3xl"><text class="text-orange-400">Player: </text><%= @player.character %> <%= @player.name %></h1>
   <h1><text class="text-orange-400">Game ID: </text><%= @game.id %></h1>
   <h1>
     <text class="text-orange-400">Your Opponent: </text>
     <%= render 'games/opponent_name', opponent: @player.opponent %>
   </h1>
-  <h1><text class="text-orange-400">You are: </text><text class="border-2 border-orange-400 rounded-lg px-1 text-4xl"><%= @player.character %></text></h1>
   <div class="my-5 text-xl text-orange-400">
     <%= link_to 'Leave game >>>', root_path, class: "border-2 border-solid py-1 px-3 border-orange-400 rounded-lg" %>
   </div>
