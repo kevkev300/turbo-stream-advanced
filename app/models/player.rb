@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 class Player < ApplicationRecord
-  CHARACTERS = %w[🐉 ⚔️].freeze
+  CHARACTERS = %w[⚔️ 🐉].freeze
 
   belongs_to :game
 
@@ -19,7 +19,11 @@ class Player < ApplicationRecord
   private
 
   def assign_character
-    self.character = (Player::CHARACTERS - game.players.pluck(:character)).sample
+    self.character = case game.players.count
+                     when 0 then Player::CHARACTERS.first
+                     when 1 then Player::CHARACTERS.last
+                     end
+
   end
 
   def notify_opponent
