@@ -26,6 +26,8 @@ class GamesController < ApplicationController
 
   def update
     @player = game.players.find(games_params[:player_id])
+    return if @player.character.nil?
+
     game.update("field#{games_params[:field_nr]}": @player.id)
 
     if game.winner_fields(@player.character)
