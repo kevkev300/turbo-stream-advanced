@@ -4,11 +4,11 @@
 
 @layer base {
   html {
-    @apply text-gray-700;
+    @apply text-gray-700 m-10;
   }
 
   h1 {
-    @apply text-2xl text-orange-400;
+    @apply text-3xl;
   }
 
   h2 {
