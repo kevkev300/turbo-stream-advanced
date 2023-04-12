@@ -26,11 +26,19 @@ class GamesController < ApplicationController
     @player = game.players.find(games_params[:player_id])
     game.update("field#{games_params[:field_nr]}": @player.id)
 
-    render partial: 'field', locals: {
-      game: game,
-      player: @player,
-      field_nr: games_params[:field_nr]
-    }
+    if game.winner_fields(@player.character)
+      render turbo_stream: turbo_stream.update(
+        'board',
+        partial: 'board',
+        locals: { game: game, player: @player }
+      )
+    else
+      render partial: 'field', locals: {
+        game: game,
+        player: @player,
+        field_nr: games_params[:field_nr]
+      }
+    end
   end
 
   private
