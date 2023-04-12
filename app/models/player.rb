@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 class Player < ApplicationRecord
-  CHARACTERS = %w[X O].freeze
+  CHARACTERS = %w[🐉 ⚔️].freeze
 
   belongs_to :game
 
