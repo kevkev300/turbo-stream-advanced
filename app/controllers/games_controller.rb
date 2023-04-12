@@ -26,7 +26,7 @@ class GamesController < ApplicationController
     @player = game.players.find(games_params[:player_id])
     game.update("field#{games_params[:field_nr]}": @player.id)
 
-    render partial: 'own_tick', locals: {
+    render partial: 'field', locals: {
       game: game,
       player: @player,
       field_nr: games_params[:field_nr]
