@@ -27,4 +27,4 @@ Only 2 players are allowed to connect via the websocket in one game.
 Player 2 cannot be in the process without Player 1. When Player 1 leaves, Player 2 is kicked out.
 
 - Level: Customized (ActionCable::Channel) with unsubscription logic (aka CleanUp)
-- Branch: `constraing_2`
+- Branch: `constraint_3`
